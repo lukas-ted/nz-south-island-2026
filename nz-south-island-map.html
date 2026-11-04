@@ -1,0 +1,69 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NZ South Island Loop · 15.11.–1.12.2026</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+ html,body{height:100%;margin:0} #map{height:100%;width:100%}
+ .legend{position:absolute;bottom:12px;left:12px;z-index:800;background:#fff;
+  padding:8px 12px;border-radius:8px;font:13px sans-serif;
+  box-shadow:0 1px 6px rgba(0,0,0,.35)}
+ .legend b{display:block;margin-bottom:3px}
+ .leaflet-popup-content{font:13px/1.4 sans-serif}
+ .leaflet-popup-content a{word-break:break-all}
+</style></head>
+<body>
+<div id="map"></div>
+<div class="legend"><b>NZ Loop 15.11.–1.12.2026</b>
+ 🔵 Logistik · 🟢 Highlights · 🟢 Linie = Kepler ·
+ 🟠 Fjord on-site · ⚫ ✂️ bewusst ausgelassen</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const GEO = {
+"type":"FeatureCollection","features":[
+{"type":"Feature","properties":{"title":"🚗 Route Gesamtloop (vereinfacht)","stroke":"#3355cc","sw":3,"description":"15 Nov - 1 Dez 2026 · Auto + Zelt"},"geometry":{"type":"LineString","coordinates":[[172.532,-43.489],[173.681,-42.400],[173.681,-42.400],[172.532,-43.489],[172.636,-43.532],[171.721,-43.205],[171.541,-42.940],[170.969,-42.717],[170.182,-43.389],[170.022,-43.457],[169.982,-43.463],[169.043,-44.002],[169.208,-44.155],[169.153,-44.700],[168.832,-44.938],[168.660,-45.032],[167.716,-45.414],[167.925,-44.671],[167.716,-45.414],[167.718,-45.567],[168.036,-45.516],[168.660,-45.032],[170.282,-44.004],[170.097,-43.733],[172.636,-43.532]]}},
+{"type":"Feature","properties":{"title":"🥾 Kepler Track","stroke":"#2e9e4f","sw":4,"description":"Start Mi 25.11 · Nächte: Brod Bay (25) · Iris Burn (26) · Moturau (27) · Ausstieg Sa 28 via Rainbow Reach"},"geometry":{"type":"LineString","coordinates":[[167.735,-45.400],[167.690,-45.477],[167.693,-45.543],[167.853,-45.525],[167.968,-45.531],[168.036,-45.516]]}},
+{"type":"Feature","properties":{"title":"✈️ Landung Christchurch","mc":"#3355cc","description":"So 15 Nov 00:25"},"geometry":{"type":"Point","coordinates":[172.532,-43.489]}},
+{"type":"Feature","properties":{"title":"🔑 Mietwagenübernahme","mc":"#3355cc","description":"Mo 16 Nov 08:00 · Rückgabe Di 1 Dez 08:00"},"geometry":{"type":"Point","coordinates":[172.542,-43.525]}},
+{"type":"Feature","properties":{"title":"🐬 Kaikōura — Dolphins 05:30 + Seals","mc":"#00a0b0","description":"Di 17 Nov · swim ~NZ$265"},"geometry":{"type":"Point","coordinates":[173.681,-42.400]}},
+{"type":"Feature","properties":{"title":"🪨 Castle Hill","mc":"#22aa44","description":"Di 17 Nov"},"geometry":{"type":"Point","coordinates":[171.721,-43.205]}},
+{"type":"Feature","properties":{"title":"💧 Devil's Punchbowl","mc":"#22aa44","description":"Mi 18 Nov · Arthurs Pass"},"geometry":{"type":"Point","coordinates":[171.541,-42.940]}},
+{"type":"Feature","properties":{"title":"🏔️ Franz Josef + Fox + Lake Matheson","mc":"#22aa44","description":"Mi 18 – Do 19"},"geometry":{"type":"Point","coordinates":[170.182,-43.389]}},
+{"type":"Feature","properties":{"title":"🏊 Blue Pools · Haast Pass","mc":"#22aa44","description":"Fr 20 Nov"},"geometry":{"type":"Point","coordinates":[169.208,-44.155]}},
+{"type":"Feature","properties":{"title":"🌅 Roys Peak (Wānaka)","mc":"#22aa44","description":"Fr 20 – Sa 21 Nov · 5-6h"},"geometry":{"type":"Point","coordinates":[169.153,-44.700]}},
+{"type":"Feature","properties":{"title":"🛷 Arrowtown + QTN","mc":"#22aa44","description":"So 22 Nov"},"geometry":{"type":"Point","coordinates":[168.832,-44.938]}},
+{"type":"Feature","properties":{"title":"🛥️ Milford Sound — on-site","mc":"#ff6600","description":"Mo 23 Nov · Straße frei · klein-Boot ~NZ$90 NUR wenn vor Ort lohnt"},"geometry":{"type":"Point","coordinates":[167.925,-44.671]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Doubtful Sound","mc":"#888888","description":"Budget-Call: Tour ~NZ$230-350 nur vor Ort wenn du willst · Auto nur bis Wharf Manapōuri"},"geometry":{"type":"Point","coordinates":[167.04,-45.48]}},
+{"type":"Feature","properties":{"title":"🏕️ Kepler Start: Control Gates","mc":"#2e9e4f","description":"Mi 25 Nov · 3n Parking prüfen"},"geometry":{"type":"Point","coordinates":[167.735,-45.400]}},
+{"type":"Feature","properties":{"title":"⛺ Kepler Zelt-Nächte","mc":"#2e9e4f","description":"Brod 25 · Iris 26 · Moturau 27 · NZ$28/Nacht"},"geometry":{"type":"Point","coordinates":[167.693,-45.543]}},
+{"type":"Feature","properties":{"title":"🌉 Rainbow Reach","mc":"#2e9e4f","description":"Sa 28 Ausstieg"},"geometry":{"type":"Point","coordinates":[168.036,-45.516]}},
+{"type":"Feature","properties":{"title":"🌌 Tekapo — Dark Sky","mc":"#22aa44","description":"Sa 28 abends"},"geometry":{"type":"Point","coordinates":[170.282,-44.004]}},
+{"type":"Feature","properties":{"title":" Hooker Valley · Mt Cook","mc":"#22aa44","description":"So 29 Nov"},"geometry":{"type":"Point","coordinates":[170.097,-43.733]}},
+{"type":"Feature","properties":{"title":"🧳 Puffertag + Rückgabe","mc":"#3355cc","description":"Mo 30 CHC · Di 1.12 Rückgabe 08:00 + Flug"},"geometry":{"type":"Point","coordinates":[172.636,-43.532]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Milford Track","mc":"#888888","description":"Campen verboten · Sound läuft am 23"},"geometry":{"type":"Point","coordinates":[167.880,-44.690]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Routeburn","mc":"#888888","description":"Kepler gewählt"},"geometry":{"type":"Point","coordinates":[168.190,-44.790]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Old Ghost Road","mc":"#888888","description":"NZ$160 Hütten + technisch"},"geometry":{"type":"Point","coordinates":[172.086,-41.610]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Whale Watch","mc":"#888888","description":"~NZ$190 · Dolphins deckts ab"},"geometry":{"type":"Point","coordinates":[173.700,-42.430]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Dunedin/Otago","mc":"#888888","description":"+2h Umweg"},"geometry":{"type":"Point","coordinates":[170.503,-45.874]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Punakaiki","mc":"#888888","description":"nördlich vom Loop"},"geometry":{"type":"Point","coordinates":[171.321,-42.112]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Catlins","mc":"#888888","description":"+1-2 Tage"},"geometry":{"type":"Point","coordinates":[169.100,-46.300]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Abel Tasman","mc":"#888888","description":"2-3 Dedicated-Days"},"geometry":{"type":"Point","coordinates":[173.032,-40.848]}}
+]};
+const map = L.map('map', {zoomSnap: .25}).setView([-44.35,170.1], 7);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+ {attribution:'© OpenStreetMap', maxZoom: 18}).addTo(map);
+L.geoJSON(GEO, {
+  style: f => ({color: f.properties.stroke || '#3355cc',
+                weight: f.properties.sw || 3, opacity: .85}),
+  pointToLayer: (f, ll) => L.circleMarker(ll,
+    {radius: 7, color: f.properties.mc, weight: 2,
+     fillColor: f.properties.mc, fillOpacity: .75}),
+  onEachFeature: (f, layer) => {
+    const p = f.properties;
+    const html = '<b>' + p.title + '</b>' +
+      (p.description ? '<br>' + p.description : '');
+    layer.bindPopup(html);
+  }
+}).addTo(map);
+map.fitBounds([[-47.0,166.0],[-40.5,174.5]], {padding: [18,18]});
+</script></body></html>
