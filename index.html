@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NZ South Island Loop · 15.11.–1.12.2026 · Route + Checkliste</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+ html,body{height:100%;margin:0;font:14px system-ui,sans-serif;color:#1a2233}
+ #map{height:56%;width:100%}
+ #list{padding:10px 14px 30px;max-width:760px;margin:0 auto}
+ .legend{position:absolute;top:10px;right:10px;z-index:900;background:#fff;
+  padding:7px 11px;border-radius:8px;font-size:12px;box-shadow:0 1px 6px rgba(0,0,0,.35)}
+ .d{margin:14px 0 6px;padding:9px 12px;border-left:4px solid #3355cc;background:#f6f8ff;border-radius:6px}
+ .d.hike{border-color:#2e9e4f;background:#f2fbf4}
+ .d.fjord{border-color:#ff6600;background:#fff7ef}
+ .d.b{font-weight:700;font-size:15px}
+ .d .sub{color:#5a6b85;font-size:12.5px}
+ .d ul{margin:5px 0 0 18px;padding:0}
+ .d li{margin:2.5px 0}
+ .price{color:#b02a2a;font-weight:600}
+ .cut{color:#8a8f98}
+ a{color:#2456c4}
+</style></head><body>
+<div id="map"></div>
+<div class="legend">🔵 Logistik · 🟢 Highlights · 🟩 Kepler · 🟠 on-site · ⚫ ausgelassen</div>
+<div id="list">
+<h2 style="margin:14px 0 2px">Tagesliste · 15.11. → 1.12.2026</h2>
+<div class="d"><div class="d b">So 15.11 · Landung 00:25 CHC</div><div class="sub">Schlafen: Hostel 24h-Checkin im Flughafen</div></div>
+<div class="d"><div class="d b">Mo 16.11 · Abholung 08:00 → Kaikōura</div><div class="sub">€480 Auto (Rückgabe 1.12. 08:00) · Point Kean Seals · <a href="https://www.google.com/maps/search/?api=1&query=-42.403,173.684">Kaikōura maps</a></div></div>
+<div class="d"><div class="d b">Di 17.11 · 05:30 Dolphins → Arthurs Pass</div>
+ <ul><li>Dolphin Encounter <span class="price">NZ$265</span> (swim, buchbar Fr)</li>
+ <li>Optional am selben Tag: Whale Watch Boot <span class="price">+~NZ$190</span> — Spermwale sind ganzjährig da, Wind-Anrufe am Morgen checken; meine Empfehlung: nur bei spiegelruhiger See</li>
+ <li>Castle Hill Boulders · <a href="https://www.google.com/maps/search/?api=1&query=-43.205,171.721">maps</a></li></ul>
+ <div class="sub">Schlafen: Arthurs Pass Village</div></div>
+<div class="d"><div class="d b">Mi 18.11 · Punchbowl → Hokitika → Franz</div><div class="sub">40-m-Wasserfall gratis · Hot Pools entfällt · <a href="https://www.google.com/maps/search/?api=1&query=-43.389,170.182">maps</a></div></div>
+<div class="d"><div class="d b">Do 19.11 · Fox + Lake Matheson</div><div class="sub">Mirror Lake früh morgens · <a href="https://www.google.com/maps/search/?api=1&query=-43.463,169.982">maps</a></div></div>
+<div class="d"><div class="d b">Fr 20.11 · Haast Pass → Wānaka</div><div class="sub">Blue Pools · <a href="https://www.google.com/maps/search/?api=1&query=-44.155,169.208">maps</a></div></div>
+<div class="d"><div class="d b">Sa 21.11 · Roys Peak</div><div class="sub">5–6 h, früh · <a href="https://www.google.com/maps/search/?api=1&query=-44.700,169.153">maps</a></div></div>
+<div class="d"><div class="d b">So 22.11 · Arrowtown → QTN → Te Ānau</div><div class="sub">Crown Range · Gondola entfällt · <a href="https://www.google.com/maps/search/?api=1&query=-45.941,167.716">maps</a></div></div>
+<div class="d fjord"><div class="d b">Mo 23.11 · Milford Road + Sound (on-site)</div>
+ <ul><li>Straße gratis: Eglinton Valley, Homer Tunnel</li>
+ <li>klein-Boot ~<span class="price">NZ$70–90</span> NUR wenn vor Ort lohnt (kleiner Boot-Typ = halbe Kreuzfahrt-Preise)</li>
+ <li><a href="https://www.google.com/maps/search/?api=1&query=-44.671,167.925">maps</a></li></ul>
+ <div class="sub">Schlafen: Te Ānau</div></div>
+<div class="d fjord"><div class="d b">Di 24.11 · PUFFER — Doubtful on-site?</div>
+ <ul><li>Ohne Tour nicht erreichbar (nur Boot über Lake Manapōuri + Wilmot-Pass ~22 km Straße)</li>
+ <li>Option A: Dive via Descend <span class="price">~NZ$350</span> (Boot+Pass inklusive, schwarze Korallen in 10–15 m — Weltklasse-Erlebnis, freier Preis nicht verifiziert) — mein Urteil: <b>wenn Tauchen wichtig ist: ja, buchbar freitags mit freie-storno</b></li>
+ <li>Option B: nix ausgeben → Te Ānau Lakefront + Kepler-Prep (Wetter-Fallback für den Wanderstart!)</li>
+ <li><a href="https://www.google.com/maps/search/?api=1&query=-45.414,167.716">maps</a></li></ul>
+ <div class="sub">Schlafen: Te Ānau</div></div>
+<div class="d hike"><div class="d b">Mi 25.11 · Kepler D1 → Brod Bay</div><div class="sub">Auto Control Gates (3-Tage-Parken in der i-Site prüfen) · Zelt NZ$28 · <a href="https://www.google.com/maps/search/?api=1&query=-45.400,167.735">maps</a></div></div>
+<div class="d hike"><div class="d b">Do 26.11 · Kepler D2 → Iris Burn</div><div class="sub">Luxmore climb + Gipfel + Kalksteinhöhlen · Nebeltal am Morgen · <a href="https://www.google.com/maps/search/?api=1&query=-45.525,167.853">maps</a></div></div>
+<div class="d hike"><div class="d b">Fr 27.11 · Kepler D3 → Moturau</div><div class="sub">Seeufer · Kea: Pack weg vom Zelt · <a href="https://www.google.com/maps/search/?api=1&query=-45.531,167.968">maps</a></div></div>
+<div class="d hike"><div class="d b">Sa 28.11 · Kepler D4 → Tekapo</div><div class="sub">Rainbow Reach Hängebrücke → Auto → 3,5 h · Dark Sky · <a href="https://www.google.com/maps/search/?api=1&query=-44.004,170.282">maps</a></div></div>
+<div class="d"><div class="d b">Mo 1.12 · 08:00 Rückgabe · Flug → Bali</div><div class="sub">NZeTA MUSS heute freigeschaltet sein ( boarding vor 13.11.) · NZeTA-Abreise-Check</div></div>
+<p class="cut">⚠️ Ausgelassen (bewusst): Old Ghost Road (NZ$160+tech) · Whale-Watch-Boot · Dunedin/Otago · Punakaiki · Catlins · Abel Tasman/Nelson (2–3 Dedication-Days) · Milford-Track/Routetburn (Kepler gewählt, Milford läuft Tag 23) · Kreuzfahrten = nur on-site</p>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const GEO = {"type":"FeatureCollection","features":[
+{"type":"Feature","properties":{"title":"🚗 Route Gesamtloop (vereinfacht)","stroke":"#3355cc","sw":3},"geometry":{"type":"LineString","coordinates":[[172.532,-43.489],[173.681,-42.400],[173.681,-42.400],[172.532,-43.489],[172.636,-43.532],[171.721,-43.205],[171.541,-42.940],[170.969,-42.717],[170.182,-43.389],[170.022,-43.457],[169.982,-43.463],[169.043,-44.002],[169.208,-44.155],[169.153,-44.700],[168.832,-44.938],[168.660,-45.032],[167.716,-45.414],[167.925,-44.671],[167.716,-45.414],[167.718,-45.567],[168.036,-45.516],[168.660,-45.032],[170.282,-44.004],[170.097,-43.733],[172.636,-43.532]]}},
+{"type":"Feature","properties":{"title":"🥾 Kepler Track","stroke":"#2e9e4f","sw":4},"geometry":{"type":"LineString","coordinates":[[167.735,-45.400],[167.690,-45.477],[167.693,-45.543],[167.853,-45.525],[167.968,-45.531],[168.036,-45.516]]}},
+{"type":"Feature","properties":{"title":"✈️ Landung CHC 00:25","mc":"#3355cc"},"geometry":{"type":"Point","coordinates":[172.532,-43.489]}},
+{"type":"Feature","properties":{"title":"🔑 Mietwagen 08:00","mc":"#3355cc"},"geometry":{"type":"Point","coordinates":[172.542,-43.525]}},
+{"type":"Feature","properties":{"title":"🐬 Kaikōura Dolphins 05:30 + Seals","mc":"#00a0b0"},"geometry":{"type":"Point","coordinates":[173.681,-42.400]}},
+{"type":"Feature","properties":{"title":"🪨 Castle Hill","mc":"#22aa44"},"geometry":{"type":"Point","coordinates":[171.721,-43.205]}},
+{"type":"Feature","properties":{"title":"💧 Devil's Punchbowl","mc":"#22aa44"},"geometry":{"type":"Point","coordinates":[171.541,-42.940]}},
+{"type":"Feature","properties":{"title":"🏔️ Franz Josef","mc":"#22aa44"},"geometry":{"type":"Point","coordinates":[170.182,-43.389]}},
+{"type":"Feature","properties":{"title":"🪞 Lake Matheson","mc":"#22aa44"},"geometry":{"type":"Point","coordinates":[169.982,-43.463]}},
+{"type":"Feature","properties":{"title":"🏊 Blue Pools","mc":"#22aa44"},"geometry":{"type":"Point","coordinates":[169.208,-44.155]}},
+{"type":"Feature","properties":{"title":"🌅 Roys Peak","mc":"#22aa44"},"geometry":{"type":"Point","coordinates":[169.153,-44.700]}},
+{"type":"Feature","properties":{"title":"🛷 Arrowtown/QTN","mc":"#22aa44"},"geometry":{"type":"Point","coordinates":[168.832,-44.938]}},
+{"type":"Feature","properties":{"title":"🛥️ Milford Sound on-site","mc":"#ff6600"},"geometry":{"type":"Point","coordinates":[167.925,-44.671]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Doubtful (on-site ~NZ$230-350)","mc":"#888888"},"geometry":{"type":"Point","coordinates":[167.04,-45.48]}},
+{"type":"Feature","properties":{"title":"🏕️ Kepler Start Control Gates","mc":"#2e9e4f"},"geometry":{"type":"Point","coordinates":[167.735,-45.400]}},
+{"type":"Feature","properties":{"title":"⛺ Kepler Zeltplaetze","mc":"#2e9e4f"},"geometry":{"type":"Point","coordinates":[167.693,-45.543]}},
+{"type":"Feature","properties":{"title":"🌉 Rainbow Reach","mc":"#2e9e4f"},"geometry":{"type":"Point","coordinates":[168.036,-45.516]}},
+{"type":"Feature","properties":{"title":"🌌 Tekapo","mc":"#22aa44"},"geometry":{"type":"Point","coordinates":[170.282,-44.004]}},
+{"type":"Feature","properties":{"title":"🏔️ Hooker Valley / Mt Cook","mc":"#22aa44"},"geometry":{"type":"Point","coordinates":[170.097,-43.733]}},
+{"type":"Feature","properties":{"title":"🧳 Puffertag + Rückgabe + Flug","mc":"#3355cc"},"geometry":{"type":"Point","coordinates":[172.636,-43.532]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Milford Track","mc":"#888888"},"geometry":{"type":"Point","coordinates":[167.880,-44.690]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Routeburn","mc":"#888888"},"geometry":{"type":"Point","coordinates":[168.190,-44.790]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Old Ghost Road","mc":"#888888"},"geometry":{"type":"Point","coordinates":[172.086,-41.610]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Whale Watch","mc":"#888888"},"geometry":{"type":"Point","coordinates":[173.700,-42.430]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Dunedin/Otago","mc":"#888888"},"geometry":{"type":"Point","coordinates":[170.503,-45.874]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Punakaiki","mc":"#888888"},"geometry":{"type":"Point","coordinates":[171.321,-42.112]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Catlins","mc":"#888888"},"geometry":{"type":"Point","coordinates":[169.100,-46.300]}},
+{"type":"Feature","properties":{"title":"✂️ CUT: Abel Tasman","mc":"#888888"},"geometry":{"type":"Point","coordinates":[173.032,-40.848]}}
+]};
+const map = L.map('map', {zoomSnap:.25}).setView([-44.35,170.1], 7);
+L.tileLayer('https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+ {attribution:'© OpenStreetMap contributors © CARTO',maxZoom:18,
+  subdomains:'abcd'}).addTo(map);
+L.geoJSON(GEO, {
+ style: f => ({color: f.properties.stroke || '#3355cc', weight: f.properties.sw || 3, opacity: .85}),
+ pointToLayer: (f, ll) => L.circleMarker(ll, {radius: 7, color: f.properties.mc, weight: 2, fillColor: f.properties.mc, fillOpacity: .75}),
+ onEachFeature: (f, layer) => layer.bindPopup('<b>' + f.properties.title + '</b>')
+}).addTo(map);
+map.fitBounds([[-47.0,166.0],[-40.5,174.5]], {padding:[18,18]});
+</script></body></html>
