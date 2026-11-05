@@ -31,6 +31,7 @@
     {"type": "Feature", "properties": {"title": "✂️ CUT: Old Ghost Road", "marker-color": "#888888", "description": "NZ$160 + technisch"}, "geometry": {"type": "Point", "coordinates": [172.09, -41.61]}},
     {"type": "Feature", "properties": {"title": "✂️ CUT: Whale Watch", "marker-color": "#888888", "description": "Zeit-Fenster im Reflow entfallen (Dolphins decken)"}, "geometry": {"type": "Point", "coordinates": [173.70, -42.43]}},
     {"type": "Feature", "properties": {"title": "✂️ CUT: Dunedin + Oamaru-Pinguine", "marker-color": "#888888", "description": "Ost-Abstecher; Moeraki-Boulders bleiben als On-Route-Option"}, "geometry": {"type": "Point", "coordinates": [170.50, -45.87]}},
-    {"type": "Feature", "properties": {"title": "✂️ CUT: Catlins", "marker-color": "#888888", "description": "+1-2 Tage Südloop"}, "geometry": {"type": "Point", "coordinates": [169.10, -46.30]}}
+    {"type":"Feature","properties":{"title":"🧱 Omarama Clay Cliffs","marker-color":"#22aa44","description":"Sa 28 Nov · schmale Kalkstein-Nadeln · private Land-Nutzung ~NZ$5 am Gate · 10 min Schotterstrasse · https://www.google.com/maps/search/?api=1&query=-44.47,170.17"},"geometry":{"type":"Point","coordinates":[170.17,-44.47]}},
+    {"type":"Feature","properties":{"title":"✂️ CUT: Catlins","marker-color":"#888888","description":"+1-2 Tage Südloop"},"geometry":{"type":"Point","coordinates":[169.10,-46.30]}}
   ]
 }
